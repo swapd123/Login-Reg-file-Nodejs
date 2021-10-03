@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/streamsaver@2.0.3/StreamSaver.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/rxjs/2.3.22/rx.all.js"></script>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<script src="script.js"></script>
+		<title>File Manager</title>
+	</head>
+	<body>
+		<div class='root'></div>
+		<% if(locals.dir){ %>
+			<script type="text/javascript">
+				let getDir = () => <%-dir%>
+				let getParent = () => <%-parent%>
+			</script>
+		<% } %>
+		<script src="/upio/client.js"></script>
+		<script src="/socket.io/socket.io.js"></script>
+		<div class="files"></div>
+
+		<div class="box">
+			<input id="inp" type="file" onchange="handle(this)" multiple />
+		</div>
+	</body>
+</html>
